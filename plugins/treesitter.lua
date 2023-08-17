@@ -11,6 +11,11 @@ return {
       "json",
       "css",
       "html",
+      "jsonc",
+      "c",
+      "objc",
+      "cuda",
+      "proto",
     })
   end,
 }

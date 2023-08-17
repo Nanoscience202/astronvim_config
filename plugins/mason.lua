@@ -1,7 +1,5 @@
 -- customize mason plugins
 
-local utils = require "astronvim.utils"
-
 return {
   -- use mason-lspconfig to configure LSP installations
   {
