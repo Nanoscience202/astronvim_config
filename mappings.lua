@@ -32,9 +32,28 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+    ["<Tab>"] = { ":bnext <CR>", desc = "Move to next buffer" },
+    ["<S-Tab>"] = { ":bprev <CR>", desc = "Move to next buffer" },
+
+    ["<leader>x"] = { '"_d <CR>', desc = "Delete (no copy)" },
+
+    -- Aerial mappings
+    ["<leader>a"] = { name = "Aerial" },
+    ["<leader>aa"] = { "<cmd> AerialToggle <CR>", desc = "Toggle Aerial" },
+    ["<leader>an"] = { "<cmd> AerialNavOpen <CR>", desc = "Toggle Nav Aerial" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  i = {
+    ["<S-BS>"] = { "<esc>", desc = "Escape" },
+  },
+  v = {
+    ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move Down" },
+    ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move Up" },
+    ["<S-BS>"] = { "<esc>", desc = "Escape" },
+    ["<leader>x"] = { '"_d', desc = "Delete (no copy)" },
   },
 }

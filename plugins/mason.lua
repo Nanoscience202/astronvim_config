@@ -1,4 +1,7 @@
 -- customize mason plugins
+
+local utils = require "astronvim.utils"
+
 return {
   -- use mason-lspconfig to configure LSP installations
   {
@@ -7,7 +10,12 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "lua_ls",
+        "lua_ls",
+        "clangd",
+        "cssls",
+        "jsonls",
+        "tailwindcss",
+        "tsserver",
       })
     end,
   },
@@ -18,8 +26,10 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "prettier",
-        -- "stylua",
+        "prettierd",
+        "stylua",
+        "clang-format",
+        "eslint_d",
       })
     end,
   },
@@ -29,7 +39,9 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "python",
+        "python",
+        "codelldb",
+        "js-debug-adpater",
       })
     end,
   },
