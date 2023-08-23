@@ -31,12 +31,16 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    -- ["<c-s>"] = { ":w!<cr>", desc = "save file" },  -- change description but the same command
 
     ["<Tab>"] = { ":bnext <CR>", desc = "Move to next buffer" },
     ["<S-Tab>"] = { ":bprev <CR>", desc = "Move to next buffer" },
 
-    ["<leader>x"] = { '"_d <CR>', desc = "Delete (no copy)" },
+    ["<leader>x"] = { '"_x', desc = "Delete (no copy)" },
+    ["<leader>X"] = { '0"_D', desc = "Delete line (no copy)" },
+
+    ["<leader>W"] = { ":wa <CR>", desc = "Write All" },
+    ["<leader>Q"] = { ":qa <CR>", desc = "Quit All" },
 
     -- Aerial mappings
     ["<leader>a"] = { name = "Aerial" },
@@ -55,5 +59,6 @@ return {
     ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move Up" },
     ["<S-BS>"] = { "<esc>", desc = "Escape" },
     ["<leader>x"] = { '"_d', desc = "Delete (no copy)" },
+    ["<leader>X"] = { '"_D', desc = "Delete line (no copy)" },
   },
 }

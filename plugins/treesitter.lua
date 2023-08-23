@@ -16,6 +16,10 @@ return {
       "objc",
       "cuda",
       "proto",
+      "markdown",
+      "markdown_inline",
+      "prisma",
+      "sql",
     })
   end,
 }

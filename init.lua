@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin",
+  colorscheme = "catppuccin-mocha",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -82,4 +82,24 @@ return {
     --   },
     -- }
   end,
+
+  icons = {
+    VimIcon = "",
+    ScrollText = "",
+    GitBranch = "",
+    GitAdd = "",
+    GitChange = "",
+    GitDelete = "",
+  },
+
+  heirline = {
+    separators = {
+      left = { "", " " },
+      right = { " ", "" },
+    },
+  },
+
+  attributes = {
+    mode = { bold = true },
+  },
 }

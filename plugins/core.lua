@@ -102,4 +102,91 @@ return {
       end
     end,
   },
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        names = true,
+        tailwind = true,
+      },
+    },
+  },
+  {
+    "rebelot/heirline.nvim",
+    opts = function(_, opts)
+      local status = require "astronvim.utils.status"
+      local getHlGroup = require("astronvim.utils").get_hlgroup
+      local grey = getHlGroup("Folded").bg
+
+      opts.statusline = {
+        hl = { fg = "fg", bg = "bg" },
+        status.component.mode {
+          mode_text = {
+            padding = { left = 1, right = 1 },
+            icon = { kind = "VimIcon", padding = { right = 1 } },
+          },
+          surround = {
+            separator = "left",
+            color = {
+              main = status.hl.mode_bg(),
+              right = grey,
+            },
+          },
+        }, -- add the mode text
+        status.component.builder {
+          { provider = status.provider.filename { modify = ":." } },
+
+          padding = { right = 1 },
+          surround = {
+            separator = "left",
+            color = {
+              main = grey,
+            },
+          },
+          hl = {
+            bg = grey,
+          },
+        },
+        status.component.git_branch { git_branch = { padding = { left = 1 } } },
+        status.component.git_diff(),
+        status.component.diagnostics(),
+        status.component.fill(),
+        status.component.cmd_info(),
+        status.component.fill(),
+        status.component.lsp(),
+        status.component.treesitter { str = { icon = { padding = { left = 1 } }, padding = { right = 2 } } },
+        status.component.file_info {
+          filetype = { padding = { right = 1 } },
+          filename = false,
+          file_modified = false,
+          surround = {
+            separator = "right",
+            color = {
+              main = grey,
+            },
+          },
+          padding = { left = 1 },
+        },
+        status.component.nav {
+          surround = {
+            separator = "right",
+            color = {
+              main = getHlGroup("String").fg,
+              left = grey,
+            },
+          },
+          ruler = false,
+          scrollbar = false,
+          percentage = { padding = { right = 1 }, icon = { kind = "ScrollText", padding = { right = 2 } } },
+          hl = {
+            fg = "bg",
+            bg = getHlGroup("String").fg,
+          },
+        },
+      }
+
+      -- return the final configuration table
+      return opts
+    end,
+  },
 }

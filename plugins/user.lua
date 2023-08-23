@@ -25,6 +25,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+      transparent_background = false,
       integrations = {
         alpha = true,
         aerial = true,
