@@ -127,12 +127,14 @@ return {
           },
           surround = {
             separator = "left",
-            color = {
-              main = status.hl.mode_bg(),
-              right = grey,
-            },
+            color = function()
+              return {
+                main = status.hl.mode_bg(),
+                right = grey,
+              }
+            end,
           },
-        }, -- add the mode text
+        },
         status.component.builder {
           { provider = status.provider.filename { modify = ":." } },
 
@@ -147,7 +149,7 @@ return {
             bg = grey,
           },
         },
-        status.component.git_branch { git_branch = { padding = { left = 1 } } },
+        status.component.git_branch {},
         status.component.git_diff(),
         status.component.diagnostics(),
         status.component.fill(),
