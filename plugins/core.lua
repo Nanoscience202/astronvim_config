@@ -154,7 +154,7 @@ return {
         status.component.cmd_info(),
         status.component.fill(),
         status.component.lsp(),
-        status.component.treesitter { str = { icon = { padding = { left = 1 } }, padding = { right = 2 } } },
+        status.component.treesitter { str = { padding = { right = 1 } } },
         status.component.file_info {
           filetype = { padding = { right = 1 } },
           filename = false,
