@@ -50,6 +50,8 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["<S-BS>"] = { "<C-\\><C-n>", desc = "Escape" },
+    ["jk"] = { "<C-\\><C-n>", desc = "Escape" },
   },
   i = {
     ["<S-BS>"] = { "<esc>", desc = "Escape" },

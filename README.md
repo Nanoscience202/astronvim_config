@@ -14,3 +14,8 @@
 - [heirline](https://github.com/rebelot/heirline.nvim): customized the status bar (inspired by NvChad's status bar)
 
 ![statusline](statusline.png)
+
+## Other custom configs
+
+- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim): when quitting nvim, eslint_d and prettierd still ran in the background, so I made an autocommand that kills both processes when exiting vim. See `polish.lua`.
+- made a few custom remaps. See `mappings.lua`
