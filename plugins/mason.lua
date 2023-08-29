@@ -16,6 +16,8 @@ return {
         "tailwindcss",
         "tsserver",
         "prismals",
+        "pyright",
+        "ruff_lsp",
       })
     end,
   },
@@ -35,6 +37,7 @@ return {
         "clang-format",
         "eslint_d",
         "cspell",
+        "autopep8",
       })
 
       opts.automatic_installation = false
@@ -60,6 +63,8 @@ return {
           null_ls.register(null_ls.builtins.code_actions.eslint_d)
           null_ls.register(null_ls.builtins.diagnostics.eslint_d)
         end,
+
+        autopep8 = function() null_ls.register(null_ls.builtins.formatting.autopep8) end,
       }
     end,
   },

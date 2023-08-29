@@ -20,6 +20,7 @@ return {
       "markdown_inline",
       "prisma",
       "sql",
+      "toml",
     })
   end,
 }
